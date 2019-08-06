@@ -1,0 +1,15 @@
++------------+----------+------+-----+---------+-------+
+| Field      | Type     | Null | Key | Default | Extra |
++------------+----------+------+-----+---------+-------+
+| playerID   | int(11)  | NO   | PRI | NULL    |       |
+| preference | char(20) | NO   | PRI | NULL    |       |
+| value      | char(50) | YES  |     | NULL    |       |
++------------+----------+------+-----+---------+-------+
+
+
+CREATE TABLE `preferences` (
+  `playerID` int(11) NOT NULL,
+  `preference` char(20) NOT NULL,
+  `value` char(50) DEFAULT NULL,
+  PRIMARY KEY (`playerID`,`preference`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

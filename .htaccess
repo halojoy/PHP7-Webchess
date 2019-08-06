@@ -1,0 +1,5 @@
+php_flag display_errors 1
+php_value error_reporting 32767
+<Files 'config.php'>
+    Require all denied
+</Files>

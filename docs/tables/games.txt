@@ -1,0 +1,23 @@
++-------------+-------------------------------------------------------------------------------+------+-----+---------+----------------+
+| Field       | Type                                                                          | Null | Key | Default | Extra          |
++-------------+-------------------------------------------------------------------------------+------+-----+---------+----------------+
+| gameID      | smallint(6)                                                                   | NO   | PRI | NULL    | auto_increment |
+| whitePlayer | mediumint(9)                                                                  | NO   |     | NULL    |                |
+| blackPlayer | mediumint(9)                                                                  | NO   |     | NULL    |                |
+| gameMessage | enum('','playerInvited','inviteDeclined','draw','playerResigned','checkMate') | YES  |     | NULL    |                |
+| messageFrom | enum('','black','white')                                                      | YES  |     | NULL    |                |
+| dateCreated | datetime                                                                      | NO   |     | NULL    |                |
+| lastMove    | datetime                                                                      | NO   |     | NULL    |                |
++-------------+-------------------------------------------------------------------------------+------+-----+---------+----------------+
+
+
+CREATE TABLE `games` (
+  `gameID` smallint(6) NOT NULL AUTO_INCREMENT,
+  `whitePlayer` mediumint(9) NOT NULL,
+  `blackPlayer` mediumint(9) NOT NULL,
+  `gameMessage` enum('','playerInvited','inviteDeclined','draw','playerResigned','checkMate') DEFAULT NULL,
+  `messageFrom` enum('','black','white') DEFAULT NULL,
+  `dateCreated` datetime NOT NULL,
+  `lastMove` datetime NOT NULL,
+  PRIMARY KEY (`gameID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
